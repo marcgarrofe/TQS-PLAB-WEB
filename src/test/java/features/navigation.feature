@@ -17,10 +17,9 @@
 ## (Comments)
 #Sample Feature Definition Template
 
+Feature: Check Navigation Bar
 
-Feature: WomenDress
-
- Scenario: Title of your scenario
+ Scenario: Show women dress
  Given the user is in the index page
  When the user clicks the products option 
  And the user enters dress in the search bar

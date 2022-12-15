@@ -1,3 +1,7 @@
 
 test-output/*
 target/*
+/target/
+.settings
+.settings/*
+.classpath
