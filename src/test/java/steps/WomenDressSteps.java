@@ -118,6 +118,14 @@ public class WomenDressSteps {
 		Assert.assertTrue(title.contains(txt));
 	}
 	
+	@Then("the msg {string} is not displayed in {string}")
+	public void checkTextDoesntAppears(String txt, String xpath) {		
+		//List<WebElement> l=driver.findElements(By.xpath(xpath));
+		//Assert.assertEquals(l.size(), 0);
+		String title = driver.findElement(By.xpath(xpath)).getText();
+		Assert.assertFalse(title.contains(txt));
+	}
+	
 	@And("check id {string} exists")
 	public void checkIdExists(String id) {
 		driver.findElements(By.id(id));
@@ -125,8 +133,17 @@ public class WomenDressSteps {
 	
 	@And("log out if siggned in")
 	public void logout() {
-		if (!driver.findElements(By.xpath("//*[@id='header']/div/div/div/div[2]/div/ul/li[4]/a")).isEmpty()) {
+		List<WebElement> l=driver.findElements(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a"));
+		if(l.size() > 0) {
 			clickPartialLinkTextButton("Logout");
+		}
+	}
+	
+	@And("delete account")
+	public void deleteAccount() {
+		List<WebElement> l=driver.findElements(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[5]/a"));
+		if(l.size() > 0) {
+			driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[5]/a")).click();
 		}
 	}
 	
@@ -146,6 +163,13 @@ public class WomenDressSteps {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
         //Scroll down till the bottom of the page
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+	}
+	
+	@And("scroll down {string}")
+	public void scrollDownUnits(String num) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Scroll down till the bottom of the page
+        js.executeScript("window.scrollBy(0," + num +  ")");
 	}
 
 	@AfterAll()

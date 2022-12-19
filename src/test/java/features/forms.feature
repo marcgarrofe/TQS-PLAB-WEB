@@ -33,7 +33,7 @@ Scenario: Fill the contact form correctly
   
 Scenario: Fill the subscription form correctly
  Given the user is in the page "https://automationexercise.com"
- And scroll down	
+ And scroll down    
  And wait 1000 mili-seconds
  When the user fills "susbscribe_email" id with "tqsprac@gmail.com"
  And wait 500 mili-seconds
@@ -44,7 +44,7 @@ Scenario: Fill the subscription form correctly
    
 Scenario: Write a review of a product
  Given the user is in the page "https://automationexercise.com/product_details/1"
- And scroll down	
+ And scroll down    
  And wait 500 mili-seconds
  When the user fills "name" id with "tqs"
  And the user fills "email" id with "tqsprac@gmail.com"

@@ -16,3 +16,25 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
+
+ Feature: Check Navigation Bar and Categories
+
+ Scenario: Show women dress
+ Given the user is in the page "https://automationexercise.com"
+ When the user clicks "Products" partialLinkText button
+ And the user enters "dress" in the "search_product" input id
+ And the user clicks "submit_search" id button
+ Then the dress list appears
+
+ Scenario: Search a non existing product
+ Given the user is in the page "https://automationexercise.com"
+ When the user clicks "Products" partialLinkText button
+ And the user enters "barretina" in the "search_product" input id
+ And the user clicks "submit_search" id button
+ Then the list appears empty
+
+ Scenario: Show products by category
+ Given the user is in the page "https://automationexercise.com"
+ When the user clicks "KID" partialLinkText button
+ And the user clicks "TOPS & SHIRTS" partialLinkText button
+ Then the KIDS - TOPS & SHIRTS PRODUCTS list appears
