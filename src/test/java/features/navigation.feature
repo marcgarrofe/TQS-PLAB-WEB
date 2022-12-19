@@ -16,12 +16,3 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-
-Feature: Check Navigation Bar
-
- Scenario: Show women dress
- Given the user is in the index page
- When the user clicks the products option 
- And the user enters dress in the search bar
- And the user clicks the search button 
- Then the dress list appears
